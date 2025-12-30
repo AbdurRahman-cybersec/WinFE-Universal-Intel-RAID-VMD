@@ -43,7 +43,7 @@ This WinFE build ensures:
 
 ### 3️⃣ Intel Rapid Storage Technology (RST) Drivers
 - Version: **v20.x** (12th–15th Gen compatible)
-- Download from Intel official website
+- Download from Intel official website: https://www.intel.com/content/www/us/en/search.html#q=Intel%C2%AE%20Rapid%20Storage%20Technology%20Driver&t=All
 - File:
   ```text
   SetupRST.exe
