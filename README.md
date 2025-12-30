@@ -1,7 +1,6 @@
 ## 📦 Repository Name
 **WinFE-Universal-Intel-RAID-VMD**
 
----
 
 ## 🎯 Objective
 Build a **fully functional Windows Forensic Environment (WinFE)** USB capable of detecting **internal NVMe and RAID volumes** on modern Intel-based systems (8th–15th Gen) while **preserving forensic integrity**.
