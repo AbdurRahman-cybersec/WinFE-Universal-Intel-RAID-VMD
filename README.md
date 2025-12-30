@@ -1,5 +1,3 @@
-# 🧪 Universal WinFE with Intel RAID & VMD Support
-
 ## 📦 Repository Name
 **WinFE-Universal-Intel-RAID-VMD**
 
