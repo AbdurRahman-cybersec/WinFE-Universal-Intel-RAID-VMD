@@ -1,10 +1,10 @@
-<img alt="Static Badge" src="https://img.shields.io/badge/github-repo-blue?logo=github"> <img alt="Static Badge" src="https://img.shields.io/badge/In_Progress-WinFE-blue">
+<img alt="Static Badge" src="https://img.shields.io/badge/license-education-blue?logo=github"> <img alt="Static Badge" src="https://img.shields.io/badge/In_Progress-WinFE-orange">
 
-## 📦 Repository Name
+##  Repository Name
 **WinFE-Universal-Intel-RAID-VMD**
 
 
-## 🎯 Objective
+##  Objective
 Build a **fully functional Windows Forensic Environment (WinFE)** USB capable of detecting **internal NVMe and RAID volumes** on modern Intel-based systems (8th–15th Gen) while **preserving forensic integrity**.
 
 This WinFE build ensures:
@@ -12,9 +12,8 @@ This WinFE build ensures:
 - No write operations to target drives
 - Reliable detection of RAID/VMD-managed storage
 
----
 
-## 🖥️ Device & Platform Compatibility
+##  Device & Platform Compatibility
 
 ### Supported Systems
 - Intel-based systems from **8th to 15th Generation**
@@ -31,7 +30,7 @@ This WinFE build ensures:
 
 ---
 
-## 📋 Requirements
+##  Requirements
 
 ### 1️⃣ Windows ADK + WinPE Add-on
 - Install the **Windows Assessment and Deployment Kit (ADK)**
@@ -54,9 +53,8 @@ This WinFE build ensures:
 ### 4️⃣ Administrator Access
 - All commands must be run from an **elevated Command Prompt**
 
----
 
-## 🛠️ Step 1: Build the WinFE Base
+##  Step 1: Build the WinFE Base
 
 1. Open **Command Prompt** as Administrator
 2. Navigate to the Intel WinFE directory:
@@ -76,7 +74,7 @@ USB\x86-x64\x64\sources\boot.wim
 
 ---
 
-## 📦 Step 2: Extract Intel RAID / VMD Drivers
+##  Step 2: Extract Intel RAID / VMD Drivers
 
 1. Extract the Intel RST drivers:
    ```cmd
@@ -95,7 +93,7 @@ USB\x86-x64\x64\sources\boot.wim
 
 ---
 
-## 🧩 Step 3: Inject Intel VMD Driver into WinFE
+##  Step 3: Inject Intel VMD Driver into WinFE
 
 ### Mount the WinFE Image
 ```cmd
@@ -116,7 +114,7 @@ Dism /Unmount-Wim /MountDir:"C:\WinFE_Mount" /Commit
 
 ---
 
-## ✅ Step 4: Verify Driver Injection
+##  Step 4: Verify Driver Injection
 
 1. Mount image for verification:
 ```cmd
@@ -134,14 +132,14 @@ Dism /Get-Drivers /Image:"C:\CheckMount" | find "iaStorVD"
 Dism /Unmount-Wim /MountDir:"C:\CheckMount" /Discard
 ```
 
-✔️ Expected output:
+ Expected output:
 ```text
 iaStorVD.inf
 ```
 
 ---
 
-## 🧪 Step 5: Test on Target System
+##  Step 5: Test on Target System
 
 1. Boot the target system from the WinFE USB with RAID/VMD enabled in BIOS
 2. Open Command Prompt:
@@ -159,14 +157,14 @@ list disk
 driverquery | find "iaStor"
 ```
 
-✔️ Expected:
+ Expected:
 ```text
 iaStorVD.sys
 ```
 
 ---
 
-## 🔌 Step 6 (Optional): Add Universal NVMe Drivers
+##  Step 6 (Optional): Add Universal NVMe Drivers
 
 To maximize compatibility, integrate vendor NVMe drivers:
 
@@ -185,14 +183,14 @@ Dism /Image:"C:\WinFE_Mount" /Add-Driver /Driver:"<NVMe_Driver_Folder>" /Recurse
 ## 🏁 Outcome
 
 Your WinFE USB now:
-- ✅ Boots on modern Intel systems (8th–15th Gen)
-- ✅ Detects RAID, VMD, and NVMe storage
-- ✅ Preserves forensic integrity
-- ✅ Supports extensible driver integration
+- Boots on modern Intel systems (8th–15th Gen)
+- Detects RAID, VMD, and NVMe storage
+- Preserves forensic integrity
+- Supports extensible driver integration
 
 ---
 
-## 🔍 Next Recommendation
+##  Next Recommendation
 
 Place forensic tools in:
 ```text
